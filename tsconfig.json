@@ -1,6 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/TypeScriptToLua/vscode-typescript-to-lua/master/tsconfig-schema.json",
     "compilerOptions": {
+        "outDir": "out/",
         "target": "ESNext",
         "lib": ["ESNext"],
         "moduleResolution": "node",
@@ -9,12 +10,11 @@
         "types": ["@jackmacwindows/lua-types/cc", "craftos", "cc"]
     },
     "tstl": {
+        "noHeader": true,
         "luaTarget": "CC",
-        "luaLibImport": "inline",
-        "luaBundle": "main.lua",
-        "luaBundleEntry": "main.ts"
+        "luaLibImport": "inline"
     },
     "include": [
-        "./*.ts"
+        "./src/*.ts"
     ]
 }
