@@ -64,5 +64,16 @@ Default: `"out/"`
 * `luaBundle`: Defines the name of the output Lua file - all TypeScript sources are bundled into this file. If unset, each file will be output separately with the same name as the TS source. This defaults to `main.lua`, matching `main.ts`.
 * `luaBundleEntry`: If `luaBundle` is set, this marks the TypeScript file that should be executed. This defaults to `main.ts`.
 
+### `include`
+Sets the paths to include during the compilation:  
+Default: 
+```json
+"include": [
+  "./src/*.ts"
+]
+```
+  
+---
+
 ## License
 The typings in `types/` and `event.ts` are licensed under the MIT license. Projects are free to use these files as provisioned under the license (i.e. do whatever you want, but include the license notice somewhere in your project). Anything else is public domain.
