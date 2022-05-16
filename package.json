@@ -4,8 +4,8 @@
   "description": "Template project for ComputerCraft programs written in TypeScript.",
   "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tstl"
+    "build": "tstl",
+    "watch": "tstl --watch"
   },
   "devDependencies": {
     "typescript": "^4.6.0",
