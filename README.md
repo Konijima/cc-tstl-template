@@ -3,11 +3,15 @@ Template project for ComputerCraft programs written in TypeScript. Uses [TypeScr
 
 ## Usage
 1. Clone the repository (or download the ZIP).
-2. Run `npm install` to install dependencies, including TypeScriptToLua.
-3. Customize `package.json` if you want - it's not used in CC.
-4. Add your code to `main.ts`, and add other files as desired.
-5. Build the project with `npm run build`.
-6. Copy `main.lua` to ComputerCraft, either by copying into the computer folder, dropping on the terminal, using Pastebin, or with [CraftOS-PC Remote](https://remote.craftos-pc.cc) or [cloud-catcher](https://cloud-catcher.squiddev.cc).
+2. Run `npm install` to install dependencies, *a custom TypeScriptToLua is included.*
+3. Run `npm update` to get the latest dependencies versions.
+4. Customize `package.json` if you want to describe your project, *it's not used in CC*.
+5. Add your typescript code to `src/`.
+6. Build the project in watch mode using `npm run watch` during development.
+7. Build the project for production/distribution with `npm run build`.
+8. Copy the content of `out/` to ComputerCraft, either by copying into the computer folder, dropping the files on the terminal, using Pastebin or wget, or with [CraftOS-PC Remote](https://remote.craftos-pc.cc) or [cloud-catcher](https://cloud-catcher.squiddev.cc) or by writting your own installer script.
+
+---
 
 ## Libraries
 
