@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "typescript": "^4.6.0",
-    "@jackmacwindows/lua-types": "^2.11.0",
-    "@jackmacwindows/typescript-to-lua": "^1.4.0"
+    "@jackmacwindows/lua-types": "latest",
+    "@jackmacwindows/typescript-to-lua": "latest"
   },
   "author": "JackMacWindows",
   "license": "MIT"
