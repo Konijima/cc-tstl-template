@@ -96,27 +96,29 @@ type FileAttributes = {
     modified: number;
 }
 
-declare const fs: {
-    list(path: string): string[];
-    exists(path: string): boolean;
-    isDir(path: string): boolean;
-    isReadOnly(path: string): boolean;
-    getName(path: string): string;
-    getDrive(path: string): string;
-    getSize(path: string): number;
-    getFreeSpace(path: string): number;
-    makeDir(path: string): void;
-    move(from: string, to: string): void;
-    copy(from: string, to: string): void;
-    'delete'(path: string): void;
-    combine(base: string, ...local: string[]): string;
-    open(path: string, mode: string): LuaMultiReturn<[FileHandle] | [null, string]>;
-    find(wildcard: string): string[];
-    getDir(path: string): string;
-    complete(partial: string, path: string, includeFiles?: boolean, includeSlashes?: boolean): string[];
-    getCapacity(path: string): number;
-    attributes(path: string): FileAttributes;
-    isDriveRoot(path: string): boolean;
+declare type FileOpenMode = 'r' | 'w' | 'a' | 'rb' | 'wb' | 'ab'
+declare namespace fs {
+    export function list(path: string): string[];
+    export function exists(path: string): boolean;
+    export function isDir(path: string): boolean;
+    export function isReadOnly(path: string): boolean;
+    export function getName(path: string): string;
+    export function getDrive(path: string): string;
+    export function getSize(path: string): number;
+    export function getFreeSpace(path: string): number;
+    export function makeDir(path: string): void;
+    export function move(from: string, to: string): void;
+    export function copy(from: string, to: string): void;
+    function _delete(path: string): void;
+    export { _delete as delete }
+    export function combine(base: string, ...local: string[]): string;
+    export function open(path: string, mode: FileOpenMode): LuaMultiReturn<[FileHandle] | [null, string]>;
+    export function find(wildcard: string): string[];
+    export function getDir(path: string): string;
+    export function complete(partial: string, path: string, includeFiles?: boolean, includeSlashes?: boolean): string[];
+    export function getCapacity(path: string): number;
+    export function attributes(path: string): FileAttributes;
+    export function isDriveRoot(path: string): boolean;
 }
 declare function sleep(time: number): void;
 declare function write(str: string): number;
