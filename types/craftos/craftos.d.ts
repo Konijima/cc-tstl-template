@@ -112,6 +112,19 @@ declare namespace fs {
     function _delete(path: string): void;
     export { _delete as delete }
     export function combine(base: string, ...local: string[]): string;
+    /**
+     * @example
+     * ```
+     * const [file, error] = fs.open('test.lua', 'w');
+     * if (file) {
+     *     file.writeLine('test');
+     *     file.close();
+     * }
+     * else {
+     *     printError(error);
+     * }
+     * ```
+     */
     export function open(path: string, mode: FileOpenMode): LuaMultiReturn<[FileHandle] | [null, string]>;
     export function find(wildcard: string): string[];
     export function getDir(path: string): string;
